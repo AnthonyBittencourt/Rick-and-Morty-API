@@ -22,6 +22,31 @@
     width: 100%;
 }
 
+.infoBtn{
+    background-color: rgb(71, 71, 158);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    height: 40px;
+    border: none;
+    border-radius: 3px;
+   border-bottom: 4px solid rgb(134, 134, 179);
+    border-left: 4px solid rgb(134, 134, 179); 
+}
+
+.infoBtn:hover{
+    background-color: rgb(85, 85, 158);
+    border: none;
+    border-top: 4px solid rgb(47, 47, 63);
+    border-right: 4px solid rgb(47, 47, 63);
+}
+
 @media(width >= 768px){
     .title{
         font-size: 4rem;

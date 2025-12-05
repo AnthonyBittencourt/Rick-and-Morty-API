@@ -2,12 +2,16 @@ import { useEffect, useState } from 'react'
 import s from './App.module.css'
 import {api} from "./api/api"
 import { Card } from './components/card'
+import Tilt from 'react-parallax-tilt'
+import InfoModal from './components/InfoModal'
 
 
 function App() {
   const [data, setData] = useState([])
   const [searchName, setSearchName] = useState("")
   const [searchPage, setSearchPage] = useState("")
+  const [modal, setModal] = useState()
+
 
   useEffect(()=> {
     api.get(`/character/?name=${searchName}&page=${searchPage}`).then((response) => {
@@ -19,6 +23,7 @@ function App() {
 
   return (
     <>
+    {modal !== undefined && <InfoModal data={data[modal]} close={ () => setModal()}/>}
       <h1 className={s.title}>Rick and Morty Characters</h1>
       <main>
         <div style={{display: "flex", flexWrap: "wrap", gap: "4px", alignItems: "center", justifyContent: "center"}}>
@@ -28,9 +33,13 @@ function App() {
         <div className={s.wrapCards}> 
           {data.map((item, index) => {
             return(
-              <div key={index}>
-                <Card image={item.image}  name={item.name} species={item.species}/>
-              </div>
+            <div key={index}>
+              <Tilt >
+                  <Card image={item.image}  name={item.name} species={item.species}/>      
+              </Tilt>
+              <button onClick={() => setModal(index)} className={s.infoBtn}> Info {item.name} </button>
+            </div>
+
             )
           })}
         </div>
