@@ -11,6 +11,10 @@
     -webkit-text-stroke-width: 2px;
 }
 
+.Logo{
+    width: 100%;
+}
+
 .wrapCards{
     display: flex;
     flex-wrap: wrap;
@@ -23,7 +27,7 @@
 }
 
 .infoBtn{
-    background-color: rgb(71, 71, 158);
+    background-color: rgba(62, 90, 36, 0.356);
     color: white;
     font-weight: bold;
     font-size: 20px;
@@ -35,20 +39,77 @@
     padding: 10px;
     height: 40px;
     border: none;
-    border-radius: 3px;
-   border-bottom: 4px solid rgb(134, 134, 179);
-    border-left: 4px solid rgb(134, 134, 179); 
+    border-radius: 999px;
+    border: 3px solid rgba(172, 255, 47, 0.267);
+    transition: all 250ms ease-in-out;
 }
 
 .infoBtn:hover{
-    background-color: rgb(85, 85, 158);
+    background-color: rgb(62, 90, 36);
+    border: 3px solid rgb(172, 255, 47);
+}
+
+.wrapInputs{
+    margin-top: 10px;
+}
+.wrapInputs input{
+    color: white;
+    background-color: rgba(4, 49, 4, 0.432);
     border: none;
-    border-top: 4px solid rgb(47, 47, 63);
-    border-right: 4px solid rgb(47, 47, 63);
+    border: 2px ridge rgb(172, 255, 47);
+    border-radius:50px;
+}
+
+.wrapInputs input::placeholder{
+    color: rgb(219, 255, 165);
+    text-shadow: 0px 0px 5px rgba(219, 255, 164, 0.363) ;
+    font-weight: 600;
+}
+
+.wrappags{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapPagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.radioGroup{
+    margin-top: 10px;
+    border: 2px solid #ffffff;
+    background-color: #0000008e;
+    padding: 10px 25px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.radioGroup label{
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.radioGroup input{
+    width: 20px;
 }
 
 @media(width >= 768px){
     .title{
         font-size: 4rem;
+    }
+
+    .Logo{
+        margin-top: 0;
+        margin-left: 700px;
+        width: 50%;
     }
 }
